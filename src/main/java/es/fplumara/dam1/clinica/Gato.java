@@ -8,12 +8,12 @@ public class Gato extends Animal implements ConHistorialClinico{
 
     @Override
     String ficha() {
-        return "";
+        return "Animales carnivoros conocidos por su amor al pescado";
     }
 
     @Override
     public void anotarRevision(String fecha, String descripcion) {
-
+        System.out.printf("Revisión con fecha %s: %s", fecha, descripcion);
     }
 
     @Override

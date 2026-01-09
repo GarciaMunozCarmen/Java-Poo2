@@ -3,12 +3,12 @@ package es.fplumara.dam1.clinica;
 public class Tortuga extends Animal implements Domesticable{
     @Override
     String sonido() {
-        return "";
+        return "grrr";
     }
 
     @Override
     String ficha() {
-        return "";
+        return "Animales omnivoros, pueden ser acuaticos o terrestres";
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Perro extends Animal implements ConHistorialClinico, Domesticable{
 
     @Override
     String ficha() {
-        return "";
+        return "Animales carnivoros apodados los mejores amigos del hombre";
     }
 
     @Override

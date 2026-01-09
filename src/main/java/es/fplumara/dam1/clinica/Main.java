@@ -15,11 +15,11 @@ public class Main {
             System.out.println(animal.sonido());
             System.out.println(animal.ficha());
             if(animal instanceof ConHistorialClinico){
-                //TODO
+                //TODO:
                 //No entiendo
             }
             if(animal instanceof Domesticable){
-                //TODO
+                //TODO:
                 //No entiendo
             }
         }

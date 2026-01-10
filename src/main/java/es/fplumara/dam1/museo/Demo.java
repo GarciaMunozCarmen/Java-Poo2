@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 
 public class Demo {
     public static double recaudacionTotal(List<Entrada> entradas){
@@ -46,9 +45,10 @@ public class Demo {
     }
 
     public static Entrada masCara (List<Entrada> entradas){
-        return entradas.stream()
-                .sorted(Comparator.comparingDouble(e -> e.precioFinal()))
-                .findFirst().orElse(entradas.getFirst()); //RARETE
+        List<Entrada> ordenada = entradas.stream()
+            .sorted(Comparator.comparingDouble(Entrada::precioFinal).reversed())
+            .toList();
+        return ordenada.get(0);
     }
     public static void main(String[] args) {
         List<Entrada> entradas = new ArrayList<>();
@@ -62,5 +62,8 @@ public class Demo {
         entradas.add(new EntradaVIP("E-100", 20.0, LocalDate.of(2026, 1, 12), "Sala Impresionistas", 3));
         entradas.add(new EntradaVIP("E-101", 25.0, LocalDate.of(2026, 1, 12), "Backstage exposición", 5));
 
+
+        entradas = entradas.stream().filter(e -> !(e instanceof EntradaGeneral)).toList();
+        System.out.printf("Tamaño: %d\nRecaudación final: %.2f", entradas.size(), recaudacionTotal(entradas));
     }
 }

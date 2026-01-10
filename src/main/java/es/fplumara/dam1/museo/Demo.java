@@ -62,8 +62,8 @@ public class Demo {
         entradas.add(new EntradaVIP("E-100", 20.0, LocalDate.of(2026, 1, 12), "Sala Impresionistas", 3));
         entradas.add(new EntradaVIP("E-101", 25.0, LocalDate.of(2026, 1, 12), "Backstage exposición", 5));
 
-
-        entradas = entradas.stream().filter(e -> !(e instanceof EntradaGeneral)).toList();
+        entradas.removeIf(e -> e instanceof EntradaGeneral);
+//        entradas = entradas.stream().filter(e -> !(e instanceof EntradaGeneral)).toList();
         System.out.printf("Tamaño: %d\nRecaudación final: %.2f", entradas.size(), recaudacionTotal(entradas));
     }
 }

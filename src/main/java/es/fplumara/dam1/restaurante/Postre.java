@@ -3,7 +3,7 @@ package es.fplumara.dam1.restaurante;
 public class Postre extends ProductMenu{
     boolean esCasero;
 
-    Postre(String id, String nombre, double precioBase, boolean esCasero) {
+    Postre(String id, String nombre, double precioBase, boolean esCasero) throws IllegalAccessException {
         super(id, nombre, precioBase);
         this.esCasero = esCasero;
     }

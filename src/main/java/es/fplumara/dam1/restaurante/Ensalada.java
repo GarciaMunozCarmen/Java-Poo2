@@ -6,7 +6,7 @@ public class Ensalada extends ProductMenu implements Personalizable, AptoPara{
     private Tamano tamano;
     private Extras extras;
 
-    Ensalada(String id, String nombre, double precioBase, Tamano tamano) {
+    Ensalada(String id, String nombre, double precioBase, Tamano tamano) throws IllegalAccessException {
         super(id, nombre, precioBase);
         this.tamano = tamano;
     }

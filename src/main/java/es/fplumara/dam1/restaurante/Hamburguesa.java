@@ -6,9 +6,12 @@ public class Hamburguesa extends ProductMenu implements Personalizable{
     private String tipoCarne;
     private Extras extras;
 
-    Hamburguesa(String id, String nombre, double precioBase, String tipoCarne) {
+    Hamburguesa(String id, String nombre, double precioBase, String tipoCarne) throws IllegalAccessException {
         super(id, nombre, precioBase);
         this.tipoCarne = tipoCarne;
+        if(tipoCarne == null || tipoCarne.isBlank()){
+            throw new IllegalAccessException("Tipo de Carne no puede estar Vacio");
+        }
     }
 
     @Override
